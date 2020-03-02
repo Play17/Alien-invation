@@ -33,8 +33,9 @@ def run():
                 sys.exit()
             elif event.type == pygame.KEYDOWN:
                 print(event.key)
-        
-        pygame.display.flip()
+    
+    #让画面可见
+    pygame.display.flip()
 
 
 run()
