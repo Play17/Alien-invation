@@ -9,12 +9,12 @@ class Bullet(Sprite):
         self.screen = screen
         #在(0,0)处创建一个表示子弹的矩形,再设置正确的位置
         self.rect = pygame.Rect(0, 0, ai_settings.bullet_width, ai_settings.bullet_height)
-        self.rect.centerx = ship.rect.centerx
-        self.rect.top = ship.rect.top
+        self.rect.centerx = ship.rect.centerx  #子弹的横坐标是飞船的中部
+        self.rect.top = ship.rect.top          #子弹的纵坐标是飞船的顶部
         #存储用小数表示的子弹位置
-        self.y = float(self.rect.y)
-        self.color = ai_settings.bullet_color
-        self.speed_factor = ai_settings.bullet_speed_factor
+        self.y = float(self.rect.y)            #使用float方法是的子弹的纵坐标可以为小数
+        self.color = ai_settings.bullet_color                   #子弹的颜色是settings文件里定义的子弹颜色
+        self.speed_factor = ai_settings.bullet_speed_factor     #子弹的速度是settings文件里定义的子弹速度 
 
     def update(self):
         """向上移动子弹"""
