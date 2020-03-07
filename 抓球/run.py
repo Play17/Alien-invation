@@ -15,8 +15,9 @@ def run():
     
     while True:
         gf.check_events(receiver)
-        gf.update_balls(ai_settings,screen,ball,receiver)
-        receiver.update()
+        if ball.game_active:
+            gf.update_balls(ai_settings,screen,ball,receiver)
+            receiver.update()
         gf.update_screen(ai_settings,screen,receiver,ball)
 
 run()
