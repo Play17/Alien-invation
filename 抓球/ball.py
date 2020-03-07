@@ -4,6 +4,9 @@ from pygame.sprite import Sprite
 class Ball(Sprite):
     def __init__(self,ai_settings,screen):
         super(Ball,self).__init__()
+        
+        self.game_active = True
+        
         self.ai_settings = ai_settings
         self.screen = screen
 
