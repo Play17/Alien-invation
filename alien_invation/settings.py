@@ -8,7 +8,8 @@ class Settings():
         self.bg_color = (255,255,255)   #窗口背景色，白色
         
         #飞船移动速度
-        self.ship_speed_factor = 1    
+        self.ship_speed_factor = 1
+        self.ship_limit = 3             #初始飞船数    
         
         #子弹设置
         self.bullet_speed_factor = 1    #子弹速度
