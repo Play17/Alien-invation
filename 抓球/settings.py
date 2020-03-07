@@ -8,3 +8,5 @@ class Settings():
         self.receiver_speed_factor = 3
 
         self.count = 0
+
+        self.balls = 3
