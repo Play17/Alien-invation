@@ -1,16 +1,16 @@
 class Settings():
     """存储《外星人入侵》的所有设置的类"""
     def __init__(self):
-        """初始化游戏的设置"""
+        """初始化游戏的静态设置"""
         #屏幕设置
         self.screen_width = 1200         #窗口宽
         self.screen_height = 600        #窗口高
         self.bg_color = (255,255,255)   #窗口背景色，白色
         
         #飞船移动速度
-        self.ship_speed_factor = 1
-        self.ship_limit = 3             #初始飞船数    
-        
+        self.ship_speed_factor = 2    
+        self.ship_limit = 3
+
         #子弹设置
         self.bullet_speed_factor = 1    #子弹速度
         self.bullet_width = 3           #子弹宽
@@ -20,5 +20,31 @@ class Settings():
         
         #外星人设置 
         self.alien_speed_factor = 0.5   #外星人移动速度
-        self.fleet_drop_speed = 10      #外星人下落速度
+        self.fleet_drop_speed = 15      #外星人下落速度
         self.fleet_direction = 1        #1代表往右移动，-1代表往左移动
+        self.alien_points = 50
+
+        """以什么样的速度加快游戏节奏"""
+        self.speedup_scale = 1.1
+        #外星人点数提高的速度
+        self.score_scale = 1.5
+        self.initialize_dynamic_settings()
+
+    def initialize_dynamic_settings(self):
+        """初始化随游戏进行而变化的设置"""
+        self.ship_speed_factor = 2
+        self.bullet_speed_factor = 1
+        self.alien_speed_factor = 0.5
+        self.fleet_direction = 1
+        #记分
+        self.alien_points = 50
+
+    def increase_speed(self):
+        """提高速度设置"""
+        #self.ship_speed_factor *= self.speedup_scale
+        self.bullet_speed_factor *= self.speedup_scale
+        self.alien_speed_factor *= self.speedup_scale
+        self.alien_points = int(self.alien_points * self.score_scale)
+        print(self.alien_points)
+
+        
