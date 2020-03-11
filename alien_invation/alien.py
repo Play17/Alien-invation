@@ -1,6 +1,7 @@
 import pygame
 from pygame.sprite import Sprite
 
+
 class Alien(Sprite):
     """表示单个外星人的类"""
     def __init__(self, ai_settings, screen):
@@ -30,7 +31,7 @@ class Alien(Sprite):
    
     def check_edges(self):
         screen_rect = self.screen.get_rect()
-        if self.rect.right >= screen_rect.right:
+        if self.rect.right >= screen_rect.right - 30:
             return True
         elif self.rect.left <= 0:
             return True
